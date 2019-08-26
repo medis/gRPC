@@ -1,0 +1,18 @@
+version: "3.3"
+
+services:
+  db:
+    image: mariadb:10.3
+    volumes:
+      - grpc:/var/lib/mysql
+    ports:
+      - 3306:3306
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: grpc
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+
+volumes:
+    grpc: {}
